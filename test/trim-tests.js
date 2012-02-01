@@ -29,7 +29,12 @@ exports['should-trim-spaces-from-both-sides-of-string'] = function (test) {
     test.done();
 };
 
-exports['should-rtrim-spaces-dashes-from-string'] = function (test) {
-    test.equal(trim.trim('thisisasafestring-','-'), 'thisisasafestring');
+exports['should-rtrim-dashes-from-string'] = function (test) {
+    test.equal(trim.rtrim('thisisasafestring-','-'), 'thisisasafestring');
+    test.done();
+};
+
+exports['should-ltrim-dashes-from-string'] = function (test) {
+    test.equal(trim.ltrim('-thisisasafestring','-'), 'thisisasafestring');
     test.done();
 };
