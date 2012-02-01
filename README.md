@@ -13,3 +13,8 @@ Pure JavaScript slug generator for Node.JS applications that need to use slugs.
 
 ## Notes
 Currently deletes unicode characters altogether, rather than convert them to URL-friendly chars.
+
+## Slugs on NPM
+You can install node-slugs via NPM, like so:
+
+	npm install slugs
