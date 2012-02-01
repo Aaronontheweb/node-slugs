@@ -10,7 +10,7 @@ exports['should-not-modify-string'] = function (test) {
 };
 
 exports['should-replace-spaces-but-nothing-else'] = function(test){
-    test.equal(slugs('this is a string with spaces'), 'thisisastringwithspaces');
+    test.equal(slugs('this is a string with spaces'), 'this-is-a-string-with-spaces');
     test.done();
 };
 

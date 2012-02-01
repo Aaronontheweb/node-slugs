@@ -3,10 +3,11 @@
  * By Aaron Stannard (aaron@stannardlabs.com)
  */
  
- // Require Underscore, if we're on the server, and it's not already present.
-  var _ = root._;
-  if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._;
+// Require Underscore, if we're on the server, and it's not already present.
+var _ = root._;
+if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._;
 
+var trim = require("./lib/trim");
  
  var slug = module.exports = function slug (incString){
      incString = incString.toLowerCase(); //Downcase the string first
@@ -21,9 +22,10 @@
              return memo + c;
          }
          
-         return memo;
+         return trim(memo,'-');
      }, 
      "");
      
      return slug;
  }
+ 
