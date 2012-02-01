@@ -26,6 +26,6 @@ var trim = require("./lib/trim");
      }, 
      "");
      
-     return trim(slug,'-');
+     return trim.trim(slug,'-');
  }
  
