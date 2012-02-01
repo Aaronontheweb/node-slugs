@@ -15,7 +15,7 @@ exports['should-rtrim-space-from-string'] = function (test) {
 };
 
 exports['should-trim-spaces-from-both-sides-of-string'] = function (test) {
-    test.equal(slugs(' thisisasafestring '), 'thisisasafestring');
+    test.equal(trim.trim(' thisisasafestring '), 'thisisasafestring');
     test.done();
 };
 
