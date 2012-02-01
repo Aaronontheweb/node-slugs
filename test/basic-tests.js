@@ -34,3 +34,8 @@ exports['should-preserve-numbers-and-characters'] = function(test){
     test.equal(slugs('Please keep m4h numb3r5'),'please-keep-m4h-numb3r5');
     test.done();
 }
+
+exports['should-not-contain-duplicate-hashes-for-multiple-spaces'] = function(test){
+    test.equal(slugs('SHOULD-LOOK-NORMAL------'), 'should-look-normal');
+    test.done();
+}
