@@ -4,12 +4,14 @@
  */
  
 var slug = module.exports = function slug (incString, preserved) {
-    if(preserved == 'undefined') {
-        preserved = ['.', '=', '-'];
+    var p = ['.', '=', '-'];
+    
+    if(typeof preserved != 'undefined') {
+        p = preserved;
     }
 
     return incString.toLowerCase().
-        replace('/[' + preserved.join('') + ']/gi', ' ').    //  replace preserved characters with spaces
+        replace(new RegExp('[' + p.join('') + ']', 'g'), ' ').    //  replace preserved characters with spaces
         replace(/^\s\s*/, '').replace(/\s\s*$/, '').    //  trim both sides of string
         replace(/[^\w\ ]/gi, '').   //  replaces all non-alphanumeric with empty string
         replace(/-{2,}/g, ' ').     //  remove duplicate spaces
