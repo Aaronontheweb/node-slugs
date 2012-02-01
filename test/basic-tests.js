@@ -44,3 +44,13 @@ exports['should-not-include-unsafe-characters'] = function(test){
     test.equal(slugs('%^T%^~!@##$$#%^$^/?????.'), 't');
     test.done();
 }
+
+exports['should-override-separator-character'] = function(test){
+    test.equal(slugs('this is a string with spaces', '+'), 'this+is+a+string+with+spaces');
+    test.done();
+}
+
+exports['should-override-preserved-characters'] = function(test){
+    test.equal(slugs('this.is=a-string.without=spaces', '-', []), 'thisisastringwithoutspaces');
+    test.done();
+}
