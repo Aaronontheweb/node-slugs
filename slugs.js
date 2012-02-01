@@ -22,10 +22,10 @@ var trim = require("./lib/trim");
              return memo + c;
          }
          
-         return trim(memo,'-');
+         return memo;
      }, 
      "");
      
-     return slug;
+     return trim(slug,'-');
  }
  

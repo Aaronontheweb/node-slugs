@@ -38,3 +38,38 @@ exports['should-ltrim-dashes-from-string'] = function (test) {
     test.equal(trim.ltrim('-thisisasafestring','-'), 'thisisasafestring');
     test.done();
 };
+
+exports['should-trim-dashes-from-both-sides-of-string'] = function (test) {
+    test.equal(trim.ltrim('-thisisasafestring-','-'), 'thisisasafestring');
+    test.done();
+};
+
+exports['should-rtrim-extra-dashes-from-string'] = function (test) {
+    test.equal(trim.ltrim('thisis-asafestring------','-'), 'thisis-asafestring');
+    test.done();
+};
+
+exports['should-ltrim-extra-dashes-from-string'] = function (test) {
+    test.equal(trim.ltrim('------thisis-asafestring','-'), 'thisis-asafestring');
+    test.done();
+};
+
+exports['should-trim-extra-dashes-from-string'] = function (test) {
+    test.equal(trim.ltrim('------thisis-asafestring-------','-'), 'thisis-asafestring');
+    test.done();
+};
+
+exports['should-ltrim-extra-spaces-from-string'] = function (test) {
+    test.equal(trim.ltrim('     thisis-asafestring'), 'thisis-asafestring');
+    test.done();
+};
+
+exports['should-rtrim-extra-spaces-from-string'] = function (test) {
+    test.equal(trim.ltrim('thisis-asafestring      '), 'thisis-asafestring');
+    test.done();
+};
+
+exports['should-trim-extra-spaces-from-string'] = function (test) {
+    test.equal(trim.ltrim('       thisis-asafestring      '), 'thisis-asafestring');
+    test.done();
+};
