@@ -9,7 +9,7 @@
 
  
  var slug = module.exports = function slug (incString){
-     incString = incString.toLower(); //Downcase the string first
+     incString = incString.toLowerCase(); //Downcase the string first
      var characters = incString.split(""); //Explode the string into a character array
      var slug = _.reduce(characters, function(memo, c)
      { 
