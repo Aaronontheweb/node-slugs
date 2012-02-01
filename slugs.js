@@ -18,7 +18,7 @@
          }
          
          if((c <= 'z' && c >= 'a') || (c <= '9' && c >= '0')){
-             return memo + 'c';
+             return memo + c;
          }
          
          return memo;
