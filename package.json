@@ -1,0 +1,12 @@
+{
+    "name": "slugs"
+  , "description": "pure JS slug generator for Node.JS with minimal dependencies"
+  , "version": "0.0.1"
+  , "private": false
+  , "author": "Aaron Stannard <aaron@aaronstannard.com>"
+  , "dependencies": {
+  }
+   "devDependencies": {
+  }
+  , "keywords": ["slug", "slugs", "url"]
+}
