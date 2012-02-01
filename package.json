@@ -3,10 +3,13 @@
   , "description": "pure JS slug generator for Node.JS with minimal dependencies"
   , "version": "0.0.1"
   , "private": false
-  , "author": "Aaron Stannard <aaron@aaronstannard.com>"
+  , "author": "Aaron Stannard <aaron@stannardlabs.com>"
   , "dependencies": {
+      "underscore":"1.3.1"
   }
    "devDependencies": {
+       "nodeunit":"0.6.4"
   }
+  , "main": "slugs.js"
   , "keywords": ["slug", "slugs", "url"]
 }
