@@ -3,18 +3,22 @@
  * By Aaron Stannard (aaron@stannardlabs.com)
  */
  
-// Require Underscore, if we're on the server, and it's not already present.
-var _ = root._;
-if (!_ && (typeof require !== 'undefined')) _ = require('underscore')._;
+var slug = module.exports = function slug (incString, separator, preserved) {
+    var p = ['.', '=', '-'];
+    var s = '-';
+    
+    if(typeof preserved != 'undefined') {
+        p = preserved;
+    }
 
-var trim = require("./lib/trim");
- 
- var slug = module.exports = function slug (incString){
-     incString = incString.toLowerCase(); //Downcase the string first
+    if(typeof separator != 'undefined') {
+        s = separator;
+    }
 
-     incString = incString.replace(/[\ .=-]/gi, '-');   //  replace spaces, . = and - with -
-     incString = incString.replace(/[^\w\ .=-]/gi, ''); //  replaces all other non-alphanumeric with empty string
-
-     return trim.trim(incString,'-');
- }
- 
+    return incString.toLowerCase().
+        replace(new RegExp('[' + p.join('') + ']', 'g'), ' ').    //  replace preserved characters with spaces
+        replace(/-{2,}/g, ' ').     //  remove duplicate spaces
+        replace(/^\s\s*/, '').replace(/\s\s*$/, '').    //  trim both sides of string
+        replace(/[^\w\ ]/gi, '').   //  replaces all non-alphanumeric with empty string
+        replace(/[\ ]/gi, s);    //  Convert spaces to dashes
+}
