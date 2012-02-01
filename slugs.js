@@ -11,21 +11,10 @@ var trim = require("./lib/trim");
  
  var slug = module.exports = function slug (incString){
      incString = incString.toLowerCase(); //Downcase the string first
-     var characters = incString.split(""); //Explode the string into a character array
-     var slug = _.reduce(characters, function(memo, c)
-     { 
-         if (c == ' ' || c == '.' || c == '=' || c == '-'){
-             return memo + '-';
-         }
-         
-         if((c <= 'z' && c >= 'a') || (c <= '9' && c >= '0')){
-             return memo + c;
-         }
-         
-         return memo;
-     }, 
-     "");
-     
-     return trim.trim(slug,'-');
+
+     incString = incString.replace(/[\ .=-]/gi, '-');   //  replace spaces, . = and - with -
+     incString = incString.replace(/[^\w\ .=-]/gi, ''); //  replaces all other non-alphanumeric with empty string
+
+     return trim.trim(incString,'-');
  }
  
