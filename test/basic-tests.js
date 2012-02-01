@@ -39,3 +39,8 @@ exports['should-not-contain-duplicate-hashes-for-multiple-spaces'] = function(te
     test.equal(slugs('SHOULD-LOOK-NORMAL------'), 'should-look-normal');
     test.done();
 }
+
+exports['should-not-include-unsafe-characters'] = function(test){
+    test.equal(slugs('%^T%^~!@##$$#%^$^/?????.'), 't');
+    test.done();
+}
