@@ -18,3 +18,6 @@ Currently deletes unicode characters altogether, rather than convert them to URL
 You can install node-slugs via NPM, like so:
 
 	npm install slugs
+
+## License
+Licensed under Apache 2.0, see license.txt for details.
