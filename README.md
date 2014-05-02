@@ -7,7 +7,7 @@ Pure JavaScript slug generator for Node.JS applications that need to use slugs.
 
     var slugs = require("slugs")
     
-    console.log(slugs('Hi there! How are you!"));
+    console.log(slugs('Hi there! How are you!'));
     //Writes hi-there-how-are-you to console
 
 
