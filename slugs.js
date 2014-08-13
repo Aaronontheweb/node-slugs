@@ -16,6 +16,10 @@ var slug = module.exports = function slug (incString, separator, preserved) {
     }
 
     return incString.toLowerCase().
+        replace('ü', 'ue').
+        replace('ä', 'ae').
+        replace('ö', 'oe').
+        replace('ß', 'ss').
         replace(new RegExp('[' + p.join('') + ']', 'g'), ' ').    //  replace preserved characters with spaces
         replace(/-{2,}/g, ' ').     //  remove duplicate spaces
         replace(/^\s\s*/, '').replace(/\s\s*$/, '').    //  trim both sides of string
