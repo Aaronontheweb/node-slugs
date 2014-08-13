@@ -1,7 +1,7 @@
 {
     "name": "slugs"
   , "description": "pure JavaScript url slug generator for Node.JS with minimal dependencies"
-  , "version": "0.1.2"
+  , "version": "0.1.3"
   , "author": "Aaron Stannard <aaron@stannardlabs.com>"
   , "contributors": [ "Timothy Strimple <tstrimple@gmail.com>" ]
   , "devDependencies": {
